@@ -40,4 +40,4 @@ Trang web kết nối các gia đình trên toàn thế giới, chia sẻ văn h
 Để chạy demo, bạn cần thêm một số hình ảnh vào thư mục `images/`:
 - `family1.jpg`, `family2.jpg`, `family3.jpg` (kích thước khoảng 400x300px)
 
-Hoặc thay thế bằng hình ảnh placeholder từ Unsplash:
+Hoặc thay thế bằng hình ảnh placeholder từ Unsplash:# Family12A8-demo
