@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Family - Gia Đình Toàn Cầu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>Global Family</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#gallery">Thư viện Gia đình</a></li>
+                <li><a href="#forum">Kết nối</a></li>
+                <li><a href="#events">Sự kiện</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li class="language-switcher">
+                    <select id="language-select">
+                        <option value="vi">🇻🇳 Tiếng Việt</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="fr">🇫🇷 Français</option>
+                    </select>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Gia Đình Toàn Cầu</h1>
+            <p class="hero-subtitle">Kết nối những trái tim, xóa nhòa mọi khoảng cách</p>
+            <p class="hero-text">Chúng tôi tin rằng dù khác biệt về văn hóa, ngôn ngữ hay địa lý, mọi gia đình đều chia sẻ những giá trị chung: tình yêu thương, sự chăm sóc và ước mơ về một tương lai tốt đẹp hơn.</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">Khám phá ngay</a>
+                <a href="#share-story" class="btn btn-secondary">Chia sẻ câu chuyện</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="world-icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-hands-helping"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section id="gallery" class="map-section">
+        <h2 class="section-title">Khám phá Gia đình Toàn cầu</h2>
+        <p class="section-subtitle">Click vào các quốc gia để gặp gỡ những gia đình đặc biệt</p>
+        
+        <div class="map-container">
+            <div id="world-map"></div>
+            <div class="map-info">
+                <h3>Đã kết nối <span id="family-count">127</span> gia đình từ <span id="country-count">42</span> quốc gia</h3>
+                <div class="country-tags">
+                    <span class="country-tag">Việt Nam</span>
+                    <span class="country-tag">Nhật Bản</span>
+                    <span class="country-tag">Mexico</span>
+                    <span class="country-tag">Pháp</span>
+                    <span class="country-tag">Kenya</span>
+                    <span class="country-tag">+37 quốc gia khác</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Families -->
+    <section class="families-section">
+        <h2 class="section-title">Gia đình tiêu biểu</h2>
+        
+        <div class="families-grid">
+            <div class="family-card">
+                <div class="family-flag">🇻🇳</div>
+                <div class="family-image" style="background-image: url('images/family1.jpg');"></div>
+                <div class="family-info">
+                    <h3>Gia đình Nguyễn</h3>
+                    <p class="family-location">Hà Nội, Việt Nam</p>
+                    <p class="family-desc">Chia sẻ truyền thống Tết Nguyên Đán và những món ăn gia đình đặc biệt...</p>
+                    <a href="#" class="read-more">Đọc câu chuyện <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="family-card">
+                <div class="family-flag">🇮🇹</div>
+                <div class="family-image" style="background-image: url('images/family2.jpg');"></div>
+                <div class="family-info">
+                    <h3>Famiglia Rossi</h3>
+                    <p class="family-location">Rome, Italy</p>
+                    <p class="family-desc">Bí quyết nấu mì Ý truyền thống và những buổi tối gia đình đầy tiếng cười...</p>
+                    <a href="#" class="read-more">Đọc câu chuyện <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="family-card">
+                <div class="family-flag">🇯🇵</div>
+                <div class="family-image" style="background-image: url('images/family3.jpg');"></div>
+                <div class="family-info">
+                    <h3>田中家族</h3>
+                    <p class="family-location">Tokyo, Nhật Bản</p>
+                    <p class="family-desc">Trải nghiệm Lễ hội Obon và cách giữ gìn truyền thống trong cuộc sống hiện đại...</p>
+                    <a href="#" class="read-more">Đọc câu chuyện <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Your Story -->
+    <section id="share-story" class="share-section">
+        <div class="share-container">
+            <h2 class="section-title">Chia sẻ câu chuyện gia đình bạn</h2>
+            <p class="section-subtitle">Mỗi gia đình đều có một câu chuyện đặc biệt. Hãy chia sẻ và kết nối!</p>
+            
+            <form class="story-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Tên gia đình" required>
+                    <select required>
+                        <option value="" disabled selected>Chọn quốc gia</option>
+                        <option value="vn">Việt Nam</option>
+                        <option value="us">Hoa Kỳ</option>
+                        <option value="jp">Nhật Bản</option>
+                        <option value="fr">Pháp</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+                
+                <textarea placeholder="Kể cho chúng tôi về gia đình bạn: truyền thống, giá trị, câu chuyện đặc biệt..." rows="5" required></textarea>
+                
+                <div class="form-row">
+                    <input type="email" placeholder="Email liên hệ">
+                    <button type="submit" class="btn btn-primary">Gửi câu chuyện</button>
+                </div>
+                
+                <p class="form-note">Bằng việc gửi câu chuyện, bạn đồng ý chia sẻ nó với cộng đồng Global Family.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <h2 class="section-title">Sự kiện sắp tới</h2>
+        
+        <div class="events-container">
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month">Th12</span>
+                </div>
+                <div class="event-info">
+                    <h3>Hội thảo trực tuyến: Ẩm thực Giáng Sinh toàn cầu</h3>
+                    <p><i class="far fa-clock"></i> 20:00 GMT | <i class="fas fa-language"></i> Song ngữ Anh-Việt</p>
+                    <p>Cùng các gia đình từ Ý, Mexico và Philippines chia sẻ món ăn truyền thống ngày lễ.</p>
+                </div>
+                <button class="btn-event">Tham gia</button>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">22</span>
+                    <span class="month">Th12</span>
+                </div>
+                <div class="event-info">
+                    <h3>Buổi kể chuyện: Truyền thuyết dân gian từ khắp nơi</h3>
+                    <p><i class="far fa-clock"></i> 19:00 GMT | <i class="fas fa-language"></i> Nhiều ngôn ngữ</p>
+                    <p>Cha mẹ và ông bà chia sẻ những câu chuyện cổ từ văn hóa của họ.</p>
+                </div>
+                <button class="btn-event">Tham gia</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><i class="fas fa-globe-americas"></i> Global Family</h3>
+                <p>Kết nối những trái tim, xóa nhòa mọi khoảng cách. Chúng tôi xây dựng cầu nối giữa các gia đình trên toàn thế giới.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Liên kết nhanh</h4>
+                <ul>
+                    <li><a href="#gallery">Thư viện Gia đình</a></li>
+                    <li><a href="#forum">Diễn đàn Kết nối</a></li>
+                    <li><a href="#events">Lịch Sự kiện</a></li>
+                    <li><a href="#">Góc Đa phương tiện</a></li>
+                    <li><a href="#">Dự án Cộng đồng</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Tham gia cùng chúng tôi</h4>
+                <p>Đăng ký nhận bản tin để cập nhật những câu chuyện mới và sự kiện đặc biệt.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email của bạn">
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Global Family. Tất cả các quyền được bảo lưu. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+            <p class="footer-quote">"Trong mỗi ngôi nhà, một câu chuyện. Trong mỗi câu chuyện, một thế giới."</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
